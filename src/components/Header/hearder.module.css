@@ -18,13 +18,13 @@
   .contentOverlay {
     position: relative;
     z-index: 1;
-    color: white; /* Changez la couleur du texte selon vos besoins */
+    color: white; 
     text-align: center;
     padding: 20px;
   }
   
   .contentOverlay h1 {
-    font-size: 3em; /* Ajustez la taille de la police selon vos besoins */
+    font-size: 3em; 
     margin: 0;
    align-items: center;
   }

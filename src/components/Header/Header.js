@@ -13,7 +13,6 @@ export const Header = () => {
           Plongez dans l'histoire des musées de France et découvrez notre
           localisation. Explorez notre site pour en savoir plus !
         </p>
-        {/* Ajoutez plus de contenu ici si nécessaire */}
       </div>
     </header>
   );
