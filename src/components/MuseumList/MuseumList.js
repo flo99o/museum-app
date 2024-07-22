@@ -3,12 +3,14 @@ import axios from "axios";
 import ReactPaginate from "react-paginate";
 import styles from "./museumlist.module.css";
 import { Header } from "../Header/Header";
+import Maps from "../Maps/Maps";
 
 const MuseumList = () => {
   const [museums, setMuseums] = useState([]);
   const [searchByName, setSearchByName] = useState("");
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("");
+  const [showMap, setShowMap] = useState(false);
   const [currentPage, setCurrentPage] = useState(0);
   const [itemsPerPage] = useState(10);
 
@@ -52,7 +54,10 @@ const MuseumList = () => {
   const handlePageClick = ({ selected }) => {
     setCurrentPage(selected);
   };
-
+  const handleMapToggle = () => {
+    console.log("helll ")
+    setShowMap(!showMap);
+  };
   return (
     <div className={styles.container}>
       <Header />
@@ -100,7 +105,12 @@ const MuseumList = () => {
                 )}
               </div>
             </div>
-            <button className={styles.buttonMaps}>Where to find me ?</button>
+            <button className={styles.buttonMaps} onClick={handleMapToggle}>
+              Where to find me ?
+            </button>
+            {showMap && museum.latitude && museum.longitude && (
+              <Maps latitude={museum.latitude} longitude={museum.longitude} />
+            )}
           </div>
         ))}
       </div>
